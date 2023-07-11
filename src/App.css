@@ -1,0 +1,20 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(255, 245, 252);
+}
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  box-sizing: border-box;
+  padding: 10px 40px;
+  box-shadow: 5px 5px 50px #eee;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #fff;
+}
