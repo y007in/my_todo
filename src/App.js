@@ -1,23 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useRef, useState } from "react";
+import Header from "./Components/Header";
+import TodoEditor from "./Components/TodoEditor";
+import TodoList from "./Components/TodoList";
 
 function App() {
+  const [todo, setTodo] = useState([]);
+  const idRef = useRef(3);
+  const onCreate = (content) => {
+    const newItem = {
+      id: idRef.current,
+      content,
+      isDone: false,
+      createdDate: new Date().getTime(),
+    };
+    setTodo([newItem, ...todo]);
+    idRef.current += 1;
+  };
+  const onUpdate = (targetId) => {
+    setTodo(
+      todo.map((item) =>
+        item.id === targetId ? { ...item, isDone: !item.isDone } : item
+      )
+    );
+  };
+  const onDelete = (targetId) => {
+    setTodo(todo.filter((item) => item.id !== targetId));
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <Header />
+        <TodoEditor onCreate={onCreate} />
+        <TodoList todo={todo} onUpdate={onUpdate} onDelete={onDelete} />
+      </div>
     </div>
   );
 }
