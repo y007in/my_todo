@@ -11,13 +11,14 @@ const TodoList = ({ todo, onUpdate, onDelete }) => {
           item.content.toLowerCase().includes(search.toLowerCase())
         );
   };
+
   return (
     <div className="TodoList">
       <input
         type="text"
         value={search}
         className="searchbar"
-        placeholder="검색어를 입력하세요"
+        placeholder="검색어를 입력하세요."
         onChange={(e) => setSearch(e.target.value)}
       />
       <div className="list_wrapper">

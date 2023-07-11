@@ -12,6 +12,7 @@ const TodoEditor = ({ onCreate }) => {
     onCreate(content);
     setContent("");
   };
+
   return (
     <div className="TodoEditor">
       <div className="editor_wrapper">

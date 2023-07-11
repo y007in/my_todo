@@ -1,8 +1,16 @@
+.TodoList {
+  height: 500px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+.TodoList::-webkit-scrollbar {
+  display: none;
+}
 .TodoList .searchbar {
   /* margin-bottom: 20px; */
   width: 100%;
   border: none;
-  border-bottom: 1px solid rgb(170, 170, 170);
+  border-bottom: 1px solid rgb(220, 220, 220);
   box-sizing: border-box;
   padding-top: 15px;
   padding-bottom: 15px;

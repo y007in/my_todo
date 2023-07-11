@@ -8,6 +8,7 @@
 .TodoItem input {
   accent-color: #6d1c3d;
 }
+
 .TodoItem .title_col {
   flex: 1;
   font-size: 14px;

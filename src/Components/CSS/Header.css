@@ -1,3 +1,27 @@
 .Todo_title {
   color: #6d1c3d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counts {
+  display: flex;
+  justify-content: right;
+
+  gap: 10px;
+
+  margin: 5px 0;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.counts .all {
+  color: #333;
+}
+.counts .done {
+  color: #1c366d;
+}
+.counts .notdone {
+  color: #6d1c3d;
 }
