@@ -8,10 +8,19 @@
 .TodoItem input {
   accent-color: #6d1c3d;
 }
-
+.TodoItem .title_col.check {
+  color: #999;
+  text-decoration: line-through;
+}
 .TodoItem .title_col {
+  display: flex;
   flex: 1;
+  align-items: center;
   font-size: 14px;
+}
+.TodoItem .title_col textarea {
+  height: 18px;
+  outline: none;
 }
 .TodoItem .date_col {
   font-size: 14px;
@@ -32,4 +41,10 @@
   background-color: transparent;
   color: #6d1c3d;
   font-weight: bold;
+}
+.noTodo {
+  margin: 50% 0;
+  text-align: center;
+  color: #999;
+  font-size: 18px;
 }

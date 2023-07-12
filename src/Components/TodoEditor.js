@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import "./CSS/TodoEditor.css";
 
 const TodoEditor = ({ onCreate }) => {
-  const [content, setContent] = useState();
+  const [content, setContent] = useState("");
   const inputRef = useRef();
   const onSubmit = () => {
     if (!content) {

@@ -15,6 +15,13 @@ function reducer(state, action) {
     case "DELETE": {
       return state.filter((item) => item.id !== action.targetId);
     }
+    case "EDIT": {
+      return state.map((item) =>
+        item.id === action.targetId
+          ? { ...item, content: action.newContent }
+          : item
+      );
+    }
     default:
       return state;
   }
@@ -46,12 +53,24 @@ function App() {
       targetId,
     });
   };
+  const onEdit = (targetId, newContent) => {
+    dispatch({
+      type: "EDIT",
+      targetId,
+      newContent,
+    });
+  };
   return (
     <div className="App">
       <div className="container">
         <Header todo={todo} />
         <TodoEditor onCreate={onCreate} />
-        <TodoList todo={todo} onUpdate={onUpdate} onDelete={onDelete} />
+        <TodoList
+          todo={todo}
+          onUpdate={onUpdate}
+          onDelete={onDelete}
+          onEdit={onEdit}
+        />
       </div>
     </div>
   );
