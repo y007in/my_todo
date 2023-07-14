@@ -1,1 +1,1 @@
-링크 : https://main--y7mytodolist.netlify.app/
+링크 : https://y7mytodolist.netlify.app/
